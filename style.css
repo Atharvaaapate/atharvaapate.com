@@ -1,0 +1,652 @@
+/* Reset basic layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Jost', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION BAR
+   ========================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 30px 4vw;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.nav-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.brand-logo a {
+    font-family: 'Cantarell', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.nav-links {
+    grid-column: 2;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links li a {
+    font-family: 'Jost', sans-serif;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+/* Mobile Hamburger Button */
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 101;
+    grid-column: 3;
+    justify-self: end;
+}
+
+.mobile-menu-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(13, 13, 13, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li a {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100svh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,0) 65%, #000000 100%),
+        url('main.png') center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 0 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+   font-family: 'Cinzel', serif;
+   font-size: clamp(1rem, 10vw, 10rem);
+   font-weight: 500;
+   letter-spacing: 0.05em;
+   line-height: 1.15;
+   text-transform: uppercase;
+   text-align: center;
+   white-space: nowrap;
+   user-select: none;
+
+  color: #ffffff;
+
+  
+   text-shadow:
+      0 3px 10px rgba(0,0,0,0.65);
+}
+
+.companies-showcase-section,
+.story-container,
+.companies-section,
+.footer {
+    position: relative;
+    z-index: 2;
+    background-color: #000000;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(2.1rem, 10vw, 4.5rem);
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        line-height: 1;
+        max-width: 100%;
+    }
+}
+
+/* Scroll Indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.scroll-down a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+}
+
+.chevron {
+    width: 14px;
+    height: 14px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+    border-right: 2px solid rgba(255, 255, 255, 0.85);
+    transform: rotate(45deg);
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.chevron:nth-child(2) {
+    animation-delay: 0.2s;
+    margin-top: -6px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    40% {
+        transform: translateY(8px) rotate(45deg);
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(4px) rotate(45deg);
+        opacity: 0.8;
+    }
+}
+
+/* =========================================================
+   TOP COMPANIES SECTION (SHOWCASE)
+   ========================================================= */
+.companies-showcase-section {
+    padding: 100px 4vw 60px 4vw;
+    scroll-margin-top: 60px;
+}
+
+.section-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.company-logo-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo-box-small {
+    background-color: #e6e6e6;
+    color: #000000;
+    font-family: 'Gasoek One', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding: 6px 16px;
+    border-radius: 6px;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    line-height: 1;
+}
+
+.media-heading-text {
+    font-family: 'Black Ops One', cursive;
+    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0em;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* =========================================================
+   STORY CARDS (ABOUT & EARLY LIFE)
+   ========================================================= */
+.story-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.story-card {
+    position: relative;
+    background-color: #0d0d0d;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    scroll-margin-top: 100px;
+    background-image: 
+        linear-gradient(#0d0d0d, #0d0d0d),
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0.25) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.03),
+        inset 0 0 15px rgba(255, 255, 255, 0.02);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.story-card:hover {
+    box-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.08),
+        inset 0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+.card-image {
+    flex: 0 0 45%;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #E8E4DC;
+    line-height: 1.1;
+}
+
+.card-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #A7A39B;
+    font-weight: 400;
+}
+
+/* =========================================================
+   BOTTOM COMPANIES SECTION (ABOUT COMPANIES)
+   ========================================================= */
+.companies-section {
+    background-color: #000000;
+    padding: 60px 4vw 100px 4vw;
+    scroll-margin-top: 60px;
+}
+
+.companies-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.companies-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.company-card {
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.company-card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.company-logo-box {
+    width: 240px;
+    height: 140px;
+    background-color: #e6e6e6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.company-logo-box .logo-text {
+    font-family: 'Gasoek One', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-name {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1;
+}
+
+.company-name .trtl-text,
+.company-name .media-text {
+    font-family: 'Noto Sans Takri', sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    display: inline-block;
+}
+
+.company-description {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+/* =========================================================
+   FOOTER / CONTACT SECTION
+   ========================================================= */
+.footer {
+    background-color: #000000;
+    padding: 0 0 40px 0;
+    scroll-margin-top: 60px;
+    position: relative;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 0 80px 0;
+}
+
+.button-divider {
+    margin: 80px 0 35px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-box h2 {
+    font-family: 'Cantarell', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.contact-email {
+    font-family: 'Jost', sans-serif;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 14px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 40px;
+    transition: all 0.4s ease;
+}
+
+.contact-email:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-bottom-row-full {
+    width: 100%;
+    padding: 0 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.social-links-left {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.social-links-left a {
+    color: rgba(255, 255, 255, 0.75);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links-left a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer-right-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.footer-brand-name {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.6vw, 2.1rem);
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 4px 0;
+}
+
+.location-text,
+.copyright {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1.5px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .companies-section,
+    .companies-showcase-section {
+        padding: 60px 20px;
+    }
+
+    .story-card {
+        padding: 28px 22px;
+        border-radius: 20px;
+        gap: 25px;
+        flex-direction: column;
+    }
+
+    .company-card {
+        flex-direction: column;
+        padding: 28px 22px;
+        gap: 25px;
+        text-align: left;
+    }
+
+    .company-logo-box {
+        width: 100%;
+        height: 120px;
+    }
+
+    .footer-divider {
+        margin-bottom: 50px;
+    }
+
+    .button-divider {
+        margin: 50px 0 30px 0;
+    }
+
+    .footer-bottom-row-full {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .footer-right-group {
+        align-items: center;
+    }
+}
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+@media (max-width: 768px) {
+    a,
+    button {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus,
+    button:focus {
+        outline: none;
+    }
+}
