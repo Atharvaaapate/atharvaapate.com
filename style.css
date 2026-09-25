@@ -1,3 +1,10 @@
+Got it! That dark gradient/shade bar across the top behind the titles is now **completely removed** — the navbar is now **100% clean and transparent** with zero blur, zero shadow, and zero dark gradient.
+
+Here is your ready-to-paste `style.css`:
+
+### `style.css` (Ready to paste)
+
+```css
 /* Reset basic layout */
 * {
     margin: 0;
@@ -12,7 +19,7 @@ body, html {
 }
 
 /* =========================================================
-   HEADER & NAVIGATION BAR (NO BLUR / ORIGINAL GRADIENT)
+   HEADER & NAVIGATION BAR (100% CLEAN & TRANSPARENT)
    ========================================================= */
 .navbar {
     position: fixed;
@@ -21,7 +28,7 @@ body, html {
     width: 100%;
     z-index: 100;
     padding: 30px 4vw;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: transparent;
 }
 
 .nav-container {
@@ -112,7 +119,6 @@ body, html {
         max-width: 300px;
         height: 100vh;
         background-color: rgba(13, 13, 13, 0.98);
-        backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -668,3 +674,4 @@ button:focus:not(:focus-visible) {
         outline: none;
     }
 }
+```
