@@ -37,11 +37,10 @@ body, html {
 }
 
 .brand-logo a {
-    font-family: 'Mona Sans', sans-serif;
-    font-stretch: 80%;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
@@ -138,7 +137,7 @@ body, html {
 }
 
 /* =========================================================
-   HERO SECTION (IMAN GADZHI TYPOGRAPHY + STATUS TAG)
+   HERO SECTION (SLIM & LUXURIOUS EDITORIAL STYLE)
    ========================================================= */
 .hero {
     position: relative;
@@ -171,27 +170,26 @@ body, html {
     display: inline-block;
     font-family: 'Inter', sans-serif;
     font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 4px;
+    font-weight: 400;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 18px;
 }
 
-/* EXACT IMAN GADZHI HERO TITLE LOOK */
+/* SLIM & LUXURIOUS HERO TITLE */
 .hero-title {
-   font-family: 'Mona Sans', sans-serif;
-   font-stretch: 80%;           /* Condensed look */
-   font-weight: 900;            /* Heavy / Black */
-   font-size: clamp(2.8rem, 10.5vw, 10.5rem);
-   letter-spacing: -0.03em;     /* Tight tracking signature */
-   line-height: 0.95;
+   font-family: 'Cormorant Garamond', 'Cinzel', serif;
+   font-size: clamp(2.4rem, 8vw, 8.5rem);
+   font-weight: 300;              /* Slim / Light high-fashion weight */
+   letter-spacing: 0.14em;         /* Sophisticated, airy luxury tracking */
+   line-height: 1.1;
    text-transform: uppercase;
    text-align: center;
    white-space: nowrap;
    user-select: none;
    color: #ffffff;
-   text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
 
 .companies-showcase-section,
@@ -206,15 +204,15 @@ body, html {
 @media (max-width: 768px) {
     .hero-tag {
         font-size: 9px;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
+        letter-spacing: 3.5px;
+        margin-bottom: 12px;
     }
 
     .hero-title {
-        font-size: clamp(2.2rem, 11vw, 4.5rem);
-        letter-spacing: -0.02em;
+        font-size: clamp(1.6rem, 7.2vw, 3.2rem);
+        letter-spacing: 0.08em;
         white-space: nowrap;
-        line-height: 1;
+        line-height: 1.1;
         max-width: 100%;
     }
 }
