@@ -1,24 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Lenis smooth scrolling
-   const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: !isMobile,
-    smoothTouch: false
-});
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: !isMobile,
+        smoothTouch: false
+    });
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
 
-if (!isMobile) {
-    requestAnimationFrame(raf);
-}
-
-    requestAnimationFrame(raf);
+    // Only start RAF loop once
+    if (!isMobile) {
+        requestAnimationFrame(raf);
+    }
 
     // Smooth anchor navigation
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -31,18 +30,18 @@ if (!isMobile) {
 
             const targetElement = document.querySelector(targetId);
 
-           if (targetElement) {
-    if (isMobile) {
-        targetElement.scrollIntoView({
-            behavior: "smooth"
-        });
-    } else {
-        lenis.scrollTo(targetElement, {
-            offset: -40,
-            duration: 1.2
-        });
-    }
-}
+            if (targetElement) {
+                if (isMobile) {
+                    targetElement.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                } else {
+                    lenis.scrollTo(targetElement, {
+                        offset: -40,
+                        duration: 1.2
+                    });
+                }
+            }
         });
     });
 
