@@ -95,7 +95,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Switches to mobile menu before desktop links can overflow */
 @media (max-width: 860px) {
     .navbar {
         padding: 16px 4vw;
@@ -115,7 +114,6 @@ body {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* ZERO-OVERFLOW DRAWER: Uses transform instead of right: -100% */
     .nav-links {
         position: fixed;
         top: 0;
@@ -128,7 +126,7 @@ body {
         justify-content: center;
         align-items: center;
         gap: 28px;
-        transform: translateX(100%); /* Never triggers horizontal scrollbar */
+        transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 100;
@@ -145,7 +143,7 @@ body {
 }
 
 /* =========================================================
-   HERO SECTION (NORMAL PROPORTIONAL SCALE)
+   HERO SECTION
    ========================================================= */
 .hero {
     position: relative;
@@ -175,7 +173,6 @@ body {
     align-items: center;
 }
 
-/* Status Tag above name */
 .hero-tag {
     display: inline-block;
     font-family: 'Inter', sans-serif;
@@ -187,7 +184,6 @@ body {
     margin-bottom: 14px;
 }
 
-/* SLIM LUXURY HERO TITLE (FITS NATURALLY ON ALL SCREENS) */
 .hero-title {
    font-family: 'Cormorant Garamond', 'Cinzel', serif;
    font-size: clamp(1.8rem, 5vw, 4.8rem);
@@ -325,7 +321,7 @@ body {
 }
 
 /* =========================================================
-   STORY CARDS (REGULAR SIZE)
+   STORY CARDS
    ========================================================= */
 .story-container {
     max-width: 960px;
@@ -625,6 +621,9 @@ body {
     font-weight: 300;
 }
 
+/* =========================================================
+   MOBILE RESPONSIVENESS (IMAGE DIMENSION FIX)
+   ========================================================= */
 @media (max-width: 768px) {
     .companies-section,
     .companies-showcase-section {
@@ -632,16 +631,31 @@ body {
     }
 
     .story-card {
-        padding: 22px 16px;
-        border-radius: 16px;
-        gap: 18px;
+        padding: 24px 20px;
+        border-radius: 18px;
+        gap: 20px;
         flex-direction: column;
+        align-items: center;
     }
 
+    /* Fixed dimension: neatly centered and proportional (never stretches too wide) */
     .card-image {
-        flex: auto;
         width: 100%;
-        height: 200px;
+        max-width: 290px;
+        height: 230px;
+        aspect-ratio: 4 / 3;
+        border-radius: 14px;
+        overflow: hidden;
+        margin: 0 auto;
+        flex: none;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
     }
 
     .company-card {
