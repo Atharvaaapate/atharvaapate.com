@@ -5,14 +5,16 @@
     box-sizing: border-box;
 }
 
-body, html {
+html, body {
+    width: 100%;
+    overflow-x: hidden;
     font-family: 'Jost', sans-serif;
     color: #ffffff;
     background-color: #000000;
 }
 
 /* =========================================================
-   HEADER & NAVIGATION BAR (100% CLEAN & TRANSPARENT)
+   HEADER & NAVIGATION BAR (CLEAN & PROPORTIONAL)
    ========================================================= */
 .navbar {
     position: fixed;
@@ -20,7 +22,7 @@ body, html {
     left: 0;
     width: 100%;
     z-index: 100;
-    padding: 30px 4vw;
+    padding: 24px 4vw;
     background: transparent;
 }
 
@@ -29,14 +31,14 @@ body, html {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 .brand-logo a {
     font-family: 'Jost', sans-serif;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
@@ -48,16 +50,16 @@ body, html {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 32px;
 }
 
 .nav-links li a {
     font-family: 'Jost', sans-serif;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.85);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     transition: color 0.3s ease;
 }
 
@@ -79,7 +81,7 @@ body, html {
 }
 
 .mobile-menu-toggle .bar {
-    width: 24px;
+    width: 22px;
     height: 2px;
     background-color: #ffffff;
     transition: all 0.3s ease;
@@ -87,7 +89,7 @@ body, html {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 20px 0;
+        padding: 16px 0;
     }
 
     .mobile-menu-toggle {
@@ -109,14 +111,14 @@ body, html {
         top: 0;
         right: -100%;
         width: 75%;
-        max-width: 300px;
+        max-width: 280px;
         height: 100vh;
         background-color: rgba(13, 13, 13, 0.98);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 32px;
-        transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        gap: 28px;
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 100;
     }
@@ -126,13 +128,13 @@ body, html {
     }
 
     .nav-links li a {
-        font-size: 15px;
-        letter-spacing: 3px;
+        font-size: 13px;
+        letter-spacing: 2.5px;
     }
 }
 
 /* =========================================================
-   HERO SECTION (SLIM & LUXURIOUS EDITORIAL STYLE)
+   HERO SECTION (BALANCED REGULAR SCALE)
    ========================================================= */
 .hero {
     position: relative;
@@ -153,6 +155,7 @@ body, html {
     z-index: 2;
     text-align: center;
     width: 100%;
+    max-width: 1100px;
     padding: 0 4vw;
     display: flex;
     flex-direction: column;
@@ -165,26 +168,26 @@ body, html {
     display: inline-block;
     font-family: 'Inter', sans-serif;
     font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 5px;
+    font-weight: 500;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 14px;
 }
 
-/* SLIM & LUXURIOUS HERO TITLE */
+/* REGULAR & BALANCED SLIM LUXURY TITLE */
 .hero-title {
    font-family: 'Cormorant Garamond', 'Cinzel', serif;
-   font-size: clamp(2.4rem, 8vw, 8.5rem);
-   font-weight: 300;              /* Slim / Light high-fashion weight */
-   letter-spacing: 0.14em;         /* Sophisticated, airy luxury tracking */
-   line-height: 1.1;
+   font-size: clamp(2rem, 5.5vw, 5.5rem);
+   font-weight: 300;
+   letter-spacing: 0.08em;
+   line-height: 1.15;
    text-transform: uppercase;
    text-align: center;
    white-space: nowrap;
    user-select: none;
    color: #ffffff;
-   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
 }
 
 .companies-showcase-section,
@@ -199,13 +202,13 @@ body, html {
 @media (max-width: 768px) {
     .hero-tag {
         font-size: 9px;
-        letter-spacing: 3.5px;
-        margin-bottom: 12px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
     }
 
     .hero-title {
-        font-size: clamp(1.6rem, 7.2vw, 3.2rem);
-        letter-spacing: 0.08em;
+        font-size: clamp(1.5rem, 6.8vw, 2.8rem);
+        letter-spacing: 0.05em;
         white-space: nowrap;
         line-height: 1.1;
         max-width: 100%;
@@ -215,7 +218,7 @@ body, html {
 /* Scroll Indicator */
 .scroll-down {
     position: absolute;
-    bottom: 35px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -230,8 +233,8 @@ body, html {
 }
 
 .chevron {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.85);
     border-right: 2px solid rgba(255, 255, 255, 0.85);
     transform: rotate(45deg);
@@ -240,7 +243,7 @@ body, html {
 
 .chevron:nth-child(2) {
     animation-delay: 0.2s;
-    margin-top: -6px;
+    margin-top: -5px;
 }
 
 @keyframes bounce {
@@ -249,11 +252,11 @@ body, html {
         opacity: 0.5;
     }
     40% {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(7px) rotate(45deg);
         opacity: 1;
     }
     60% {
-        transform: translateY(4px) rotate(45deg);
+        transform: translateY(3px) rotate(45deg);
         opacity: 0.8;
     }
 }
@@ -262,18 +265,18 @@ body, html {
    TOP COMPANIES SECTION (SHOWCASE)
    ========================================================= */
 .companies-showcase-section {
-    padding: 100px 4vw 60px 4vw;
+    padding: 70px 4vw 45px 4vw;
     scroll-margin-top: 60px;
 }
 
 .section-title {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 3.5px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     text-align: center;
 }
 
@@ -281,16 +284,16 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .logo-box-small {
     background-color: #e6e6e6;
     color: #000000;
     font-family: 'Gasoek One', sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 6px;
     letter-spacing: -0.02em;
     display: inline-block;
@@ -299,7 +302,7 @@ body, html {
 
 .media-heading-text {
     font-family: 'Black Ops One', cursive;
-    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
     font-weight: 400;
     color: #ffffff;
     letter-spacing: 0em;
@@ -308,26 +311,26 @@ body, html {
 }
 
 /* =========================================================
-   STORY CARDS (ABOUT & EARLY LIFE)
+   STORY CARDS (REGULAR BALANCED SIZE)
    ========================================================= */
 .story-container {
-    max-width: 1100px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 45px;
 }
 
 .story-card {
     position: relative;
     background-color: #0d0d0d;
     border: 1px solid transparent;
-    border-radius: 24px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 32px;
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 36px;
     scroll-margin-top: 100px;
     background-image: 
         linear-gradient(#0d0d0d, #0d0d0d),
@@ -347,9 +350,9 @@ body, html {
 }
 
 .card-image {
-    flex: 0 0 45%;
-    height: 340px;
-    border-radius: 16px;
+    flex: 0 0 40%;
+    height: 280px;
+    border-radius: 14px;
     overflow: hidden;
 }
 
@@ -366,17 +369,17 @@ body, html {
 
 .card-text h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 3.2vw, 3rem);
     font-weight: 600;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     color: #E8E4DC;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 .card-text p {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.65;
     color: #A7A39B;
     font-weight: 400;
 }
@@ -386,12 +389,12 @@ body, html {
    ========================================================= */
 .companies-section {
     background-color: #000000;
-    padding: 60px 4vw 100px 4vw;
+    padding: 50px 4vw 80px 4vw;
     scroll-margin-top: 60px;
 }
 
 .companies-container {
-    max-width: 1000px;
+    max-width: 980px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -401,12 +404,12 @@ body, html {
 
 .companies-title {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 3.5px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     text-align: center;
 }
 
@@ -414,12 +417,12 @@ body, html {
     width: 100%;
     background: #0d0d0d;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 40px;
+    border-radius: 18px;
+    padding: 32px;
     display: flex;
     align-items: center;
-    gap: 45px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    gap: 36px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -429,10 +432,10 @@ body, html {
 }
 
 .company-logo-box {
-    width: 240px;
-    height: 140px;
+    width: 200px;
+    height: 120px;
     background-color: #e6e6e6;
-    border-radius: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -441,7 +444,7 @@ body, html {
 
 .company-logo-box .logo-text {
     font-family: 'Gasoek One', sans-serif;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-weight: 400;
     color: #000000;
     letter-spacing: -0.02em;
@@ -455,11 +458,11 @@ body, html {
 }
 
 .company-name {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin-bottom: 14px;
+    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     line-height: 1;
 }
 
@@ -473,7 +476,7 @@ body, html {
 
 .company-description {
     font-family: 'Jost', sans-serif;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
@@ -484,7 +487,7 @@ body, html {
    ========================================================= */
 .footer {
     background-color: #000000;
-    padding: 0 0 40px 0;
+    padding: 0 0 35px 0;
     scroll-margin-top: 60px;
     position: relative;
 }
@@ -493,15 +496,15 @@ body, html {
     width: 100%;
     height: 1px;
     background: rgba(255, 255, 255, 0.15);
-    margin: 0 0 80px 0;
+    margin: 0 0 60px 0;
 }
 
 .button-divider {
-    margin: 80px 0 35px 0;
+    margin: 60px 0 30px 0;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 4vw;
     display: flex;
@@ -510,24 +513,24 @@ body, html {
 
 .contact-box {
     text-align: center;
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .contact-box h2 {
     font-family: 'Cantarell', sans-serif;
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
 }
 
 .contact-box p {
     font-family: 'Jost', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(255, 255, 255, 0.55);
-    margin-bottom: 35px;
-    letter-spacing: 3px;
+    margin-bottom: 30px;
+    letter-spacing: 2.5px;
     font-weight: 400;
 }
 
@@ -535,14 +538,14 @@ body, html {
     font-family: 'Jost', sans-serif;
     display: inline-block;
     color: #ffffff;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     text-decoration: none;
-    padding: 14px 32px;
+    padding: 12px 28px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 40px;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
 .contact-email:hover {
@@ -562,7 +565,7 @@ body, html {
 
 .social-links-left {
     display: flex;
-    gap: 22px;
+    gap: 18px;
     align-items: center;
 }
 
@@ -577,25 +580,25 @@ body, html {
 
 .social-links-left a:hover {
     color: #ffffff;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .footer-right-group {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 6px;
+    gap: 4px;
 }
 
 .footer-brand-name {
     font-family: 'PT Serif', serif;
     font-weight: 700;
-    font-size: clamp(1.3rem, 2.6vw, 2.1rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    letter-spacing: 0.06em;
     color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
     line-height: 1;
-    margin: 0 0 4px 0;
+    margin: 0 0 3px 0;
 }
 
 .location-text,
@@ -603,47 +606,53 @@ body, html {
     font-family: 'Jost', sans-serif;
     font-size: 11px;
     color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     font-weight: 300;
 }
 
 @media (max-width: 768px) {
     .companies-section,
     .companies-showcase-section {
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
 
     .story-card {
-        padding: 28px 22px;
-        border-radius: 20px;
-        gap: 25px;
+        padding: 24px 18px;
+        border-radius: 16px;
+        gap: 20px;
         flex-direction: column;
+    }
+
+    .card-image {
+        flex: auto;
+        width: 100%;
+        height: 220px;
     }
 
     .company-card {
         flex-direction: column;
-        padding: 28px 22px;
-        gap: 25px;
+        padding: 24px 18px;
+        gap: 20px;
         text-align: left;
     }
 
     .company-logo-box {
         width: 100%;
-        height: 120px;
+        height: 100px;
     }
 
     .footer-divider {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .button-divider {
-        margin: 50px 0 30px 0;
+        margin: 40px 0 25px 0;
     }
 
     .footer-bottom-row-full {
         flex-direction: column;
         align-items: center;
-        gap: 25px;
+        gap: 20px;
     }
 
     .footer-right-group {
