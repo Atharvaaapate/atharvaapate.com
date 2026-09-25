@@ -12,7 +12,7 @@ body, html {
 }
 
 /* =========================================================
-   HEADER & NAVIGATION BAR (FROSTED GLASS EFFECT)
+   HEADER & NAVIGATION BAR (NO BLUR / ORIGINAL GRADIENT)
    ========================================================= */
 .navbar {
     position: fixed;
@@ -20,12 +20,8 @@ body, html {
     left: 0;
     width: 100%;
     z-index: 100;
-    padding: 20px 4vw;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    transition: background 0.3s ease;
+    padding: 30px 4vw;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
 .nav-container {
@@ -91,7 +87,7 @@ body, html {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 16px 0;
+        padding: 20px 0;
     }
 
     .mobile-menu-toggle {
